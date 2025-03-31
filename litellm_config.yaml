@@ -1,0 +1,9 @@
+model_list:
+  - model_name: gemini-pro # Tên bạn sẽ dùng trong SillyTavern
+    litellm_params:
+      model: gemini/gemini-pro
+      # API keys sẽ được đọc từ biến môi trường bạn cài trên Render
+      # (GEMINI_API_KEY_1, GEMINI_API_KEY_2, ...)
+
+litellm_settings:
+  set_verbose: true # Để xem log chi tiết trên Render
