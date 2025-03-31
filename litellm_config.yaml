@@ -1,7 +1,36 @@
 model_list:
-  - model_name: gemini-2.5-pro-exp-03-25 # Tên bạn sẽ dùng trong SillyTavern
+model_list:
+  - model_name: Gemini-2.5-Pro-Experimental # <<< TÊN BẠN SẼ DÙNG trong SillyTavern
     litellm_params:
-      model: gemini/gemini-2.5-pro-exp-03-25
+      model: gemini/gemini-2.5-pro-exp-03-25 # <<< ID MODEL THẬT sự của Google
+
+  - model_name: Gemini-2.0-Flash # <<< TÊN BẠN SẼ DÙNG trong SillyTavern
+    litellm_params:
+      model: gemini/gemini-2.0-flash # <<< ID MODEL THẬT sự của Google
+       
+  - model_name: gemini-1.5-pro # <<< TÊN BẠN SẼ DÙNG trong SillyTavern
+    litellm_params:
+      model: gemini/gemini-1.5-pro-latest # <<< ID MODEL THẬT sự của Google
+      # API keys LiteLLM sẽ tự lấy từ biến môi trường GEMINI_API_KEY_...
+
+  - model_name: Gemini-1.5-Flash # <<< TÊN BẠN SẼ DÙNG trong SillyTavern
+    litellm_params:
+      model: gemini/gemini-1.5-flash # <<< ID MODEL THẬT sự của Google
+
+  - model_name: Imagen-3 # <<< TÊN BẠN SẼ DÙNG trong SillyTavern
+    litellm_params:
+      model: gemini/imagen-3.0-generate-002 # <<< ID MODEL THẬT sự của Google
+
+
+
+      
+  # Thêm các model khác tương tự nếu muốn
+  # - model_name: gemini-vision
+  #   litellm_params:
+  #     model: models/gemini-pro-vision # (Kiểm tra ID đúng)
+
+litellm_settings:
+  set_verbose: true
       # API keys sẽ được đọc từ biến môi trường bạn cài trên Render
       # (GEMINI_API_KEY_1, GEMINI_API_KEY_2, ...)
 
