@@ -216,3 +216,5 @@ litellm_settings:
 litellm_settings:
   set_verbose: true # Để xem log chi tiết trên Render
   drop_params: true
+  master_key: "quanskyo1102" # Thay bằng khóa bí mật mạnh của bạn
+
