@@ -1,5 +1,4 @@
 model_list:
-  - model_name: gemini-2.5-pro-exp-03-25
   # --- Định nghĩa nhóm key cho gemini-2.5-pro-exp-03-25 ---
   # LiteLLM sẽ tự động luân phiên (round-robin) giữa các key này
   # Đặt cùng model_name để LiteLLM biết chúng thuộc cùng một nhóm
@@ -62,7 +61,6 @@ model_list:
   - model_name: gemini-2.5-pro-exp-03-25-router
 litellm_params:
 model: gemini/gemini-2.5-pro-exp-03-25
-      api_key: os.environ/GEMINI_API_KEY
       api_key: os.environ/GEMINI_API_KEY_15
   - model_name: gemini-2.5-pro-exp-03-25-router
     litellm_params:
@@ -148,6 +146,17 @@ model: gemini/gemini-2.5-pro-exp-03-25
     litellm_params:
       model: gemini/gemini-2.5-pro-exp-03-25
       api_key: os.environ/GEMINI_API_KEY_36
+
+# (Tùy chọn) Bạn có thể thêm các cấu hình khác của LiteLLM ở đây
+# ví dụ:
+# general_settings:
+#   master_key: sk-1234 # Nếu bạn muốn bảo vệ proxy bằng master key
+
+# litigation:
+#   # Các cài đặt log, v.v.
+
+# Thêm các model khác tương tự nếu muốn
+# - model_name: gemini-vision
 
 # (Tùy chọn) Bạn có thể thêm các cấu hình khác của LiteLLM ở đây
 # ví dụ:
