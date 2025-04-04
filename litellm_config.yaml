@@ -3,7 +3,7 @@ model_list:
   - model_name: Gemini-2.5-Pro-Experimental # <<< TÊN BẠN SẼ DÙNG trong SillyTavern
     litellm_params:
       model: gemini/gemini-2.5-pro-exp-03-25 # <<< ID MODEL THẬT sự của Google
-      api_key: os.environ/GEMINI_API_KEY
+      api_key: os.environ/https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro-exp-03-25:generateContent?key=GEMINI_API_KEY
   # Thêm các model khác tương tự nếu muốn
   # - model_name: gemini-vision
   #   litellm_params:
