@@ -1,12 +1,16 @@
+# config.yaml cho LiteLLM
+
 model_list:
   # --- Định nghĩa nhóm key cho gemini-2.5-pro-exp-03-25 ---
   # LiteLLM sẽ tự động luân phiên (round-robin) giữa các key này
   # Đặt cùng model_name để LiteLLM biết chúng thuộc cùng một nhóm
+
+  # --- Key 1-14 ---
   - model_name: gemini-2.5-pro-exp-03-25-router # Tên định tuyến bạn sẽ gọi trong API
     litellm_params:
       model: gemini/gemini-2.5-pro-exp-03-25 # Model thực tế của Gemini
       api_key: os.environ/GEMINI_API_KEY_1
-  - model_name: gemini-2.5-pro-exp-03-25-router # Cùng tên định tuyến
+  - model_name: gemini-2.5-pro-exp-03-25-router
     litellm_params:
       model: gemini/gemini-2.5-pro-exp-03-25
       api_key: os.environ/GEMINI_API_KEY_2
@@ -58,10 +62,14 @@ model_list:
     litellm_params:
       model: gemini/gemini-2.5-pro-exp-03-25
       api_key: os.environ/GEMINI_API_KEY_14
+
+  # --- Sửa lỗi thụt lề ở Key 15 ---
   - model_name: gemini-2.5-pro-exp-03-25-router
-litellm_params:
-model: gemini/gemini-2.5-pro-exp-03-25
-      api_key: os.environ/GEMINI_API_KEY_15
+    litellm_params: # <-- Đã sửa thụt lề
+      model: gemini/gemini-2.5-pro-exp-03-25 # <-- Đã sửa thụt lề
+      api_key: os.environ/GEMINI_API_KEY_15 # <-- Đã sửa thụt lề
+
+  # --- Key 16-36 ---
   - model_name: gemini-2.5-pro-exp-03-25-router
     litellm_params:
       model: gemini/gemini-2.5-pro-exp-03-25
@@ -147,46 +155,20 @@ model: gemini/gemini-2.5-pro-exp-03-25
       model: gemini/gemini-2.5-pro-exp-03-25
       api_key: os.environ/GEMINI_API_KEY_36
 
-# (Tùy chọn) Bạn có thể thêm các cấu hình khác của LiteLLM ở đây
-# ví dụ:
-# general_settings:
-#   master_key: sk-1234 # Nếu bạn muốn bảo vệ proxy bằng master key
-
-# litigation:
-#   # Các cài đặt log, v.v.
-
-# Thêm các model khác tương tự nếu muốn
-# - model_name: gemini-vision
-
-# (Tùy chọn) Bạn có thể thêm các cấu hình khác của LiteLLM ở đây
-# ví dụ:
-# general_settings:
-#   master_key: sk-1234 # Nếu bạn muốn bảo vệ proxy bằng master key
-
-# litigation:
-#   # Các cài đặt log, v.v.
-
-# Thêm các model khác tương tự nếu muốn
-# - model_name: gemini-vision
-
-# (Tùy chọn) Bạn có thể thêm các cấu hình khác của LiteLLM ở đây
-# ví dụ:
-# general_settings:
-#   master_key: sk-1234 # Nếu bạn muốn bảo vệ proxy bằng master key
-
-# litigation:
-#   # Các cài đặt log, v.v.
-      
-  # Thêm các model khác tương tự nếu muốn
-  # - model_name: gemini-vision
+  # (Tùy chọn) Thêm các model khác nếu cần
+  # Ví dụ:
+  # - model_name: gemini-vision-router
   #   litellm_params:
-  #     model: models/gemini-pro-vision # (Kiểm tra ID đúng)
+  #     model: gemini/gemini-pro-vision # (Kiểm tra ID model vision chính xác)
+  #     api_key: os.environ/GEMINI_VISION_API_KEY
 
+# --- Cấu hình chung của LiteLLM ---
+# Gom các cài đặt vào một khối duy nhất
 litellm_settings:
-  set_verbose: true
-      # API keys sẽ được đọc từ biến môi trường bạn cài trên Render
-      # (GEMINI_API_KEY_1, GEMINI_API_KEY_2, ...)
+  set_verbose: true   # Bật log chi tiết để dễ debug trên Render
+  drop_params: true    # (Tùy chọn) Loại bỏ các tham số không được hỗ trợ bởi model đích
+  # master_key: sk-1234 # (Tùy chọn) Nếu bạn muốn bảo vệ proxy bằng master key, hãy bỏ comment và đặt key
 
-litellm_settings:
-  set_verbose: true # Để xem log chi tiết trên Render
-  drop_params: true
+# litigation: # (Tùy chọn) Cấu hình logging, database,... nếu cần
+#   # Ví dụ:
+#   # bedrock_logging: True
