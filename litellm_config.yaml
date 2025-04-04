@@ -2,7 +2,7 @@ model_list:
 model_list:
   - model_name: Gemini-2.5-Pro-Experimental # <<< TÊN BẠN SẼ DÙNG trong SillyTavern
     litellm_params:
-      model: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro-exp-03-25:generateContent?key=GEMINI_API_KEY # <<< ID MODEL THẬT sự của Google
+      model: gemini/gemini-2.5-pro-exp-03-25:generateContent?key=GEMINI_API_KEY # <<< ID MODEL THẬT sự của Google
 
   - model_name: Gemini-2.0-Flash # <<< TÊN BẠN SẼ DÙNG trong SillyTavern
     litellm_params:
