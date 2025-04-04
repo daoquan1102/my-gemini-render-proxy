@@ -173,15 +173,7 @@ model_list:
   - model_name: gemini-2.5-pro-exp-03-25-router
     litellm_params:
       model: gemini/gemini-2.5-pro-exp-03-25
-      api_key: os.environ/GEMINI_API_KEY_
-  - model_name: gemini-2.5-pro-exp-03-25-router
-    litellm_params:
-      model: gemini/gemini-2.5-pro-exp-03-25
-      api_key: os.environ/GEMINI_API_KEY_4343
-  - model_name: gemini-2.5-pro-exp-03-25-router
-    litellm_params:
-      model: gemini/gemini-2.5-pro-exp-03-25
-      api_key: os.environ/GEMINI_API_KEY_
+      api_key: os.environ/GEMINI_API_KEY_43
   - model_name: gemini-2.5-pro-exp-03-25-router
     litellm_params:
       model: gemini/gemini-2.5-pro-exp-03-25
